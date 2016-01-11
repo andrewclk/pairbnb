@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pairbnb</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
 </head>
 <body>
+  <div id="header">
+    <% if signed_in? %>
+      <%= button_to ("Sign out"), sign_out_path, method: :delete %>
+  <div id="user-widget">
+    <% elsif current_user %>
+    Welcome <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% else %>
+     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    </div>
+      <%= link_to ("Sign In"), sign_in_path %>
+    <% end %>
+  </div>
 
-<%= yield %>
+  <div id="flash">
+    <% flash.each do |key, value| -%>
+      <div id="flash_<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
 
+  <%= yield %>
 </body>
 </html>
