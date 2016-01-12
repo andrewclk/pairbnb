@@ -1,0 +1,234 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ .airbnb {
+      background-image: url(https://a2.muscache.com/airbnb/static/landing_pages/pretzel/stills/seoul-ae85e0e675294f40e8b35b00dac98f55.jpg);
+      background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.white {
+  background-color: white;
+
+}
+
+.col-white {
+   color: white;
+}
+
+.middle {
+    margin-left: 80px;
+    width: 60%;
+    padding: 10px;
+}
+
+.transparent {
+  opacity: 0.1;
+}
+
+.col-height {
+  min-height: 150px;
+}
+
+.sup-height {
+  min-height: 360px;
+}
+
+.adjust-top {
+  padding-top: 40px;
+
+}
+
+#mask {
+    display: none;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 999;
+}
+
+/* You can customize to your needs  */
+.login-popup {
+    display: none;
+    /*background: #333;*/
+    padding: 10px;
+    /*border: 2px solid #ddd;*/
+    float: left;
+    font-size: 1.2em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 99999;
+    /*box-shadow: 0px 0px 20px #999;*/
+    /* CSS3 */
+        /*-moz-box-shadow: 0px 0px 20px #999;*/
+    /* Firefox */
+        /*-webkit-box-shadow: 0px 0px 20px #999;*/
+    /* Safari, Chrome */
+  /*border-radius: 3px 3px 3px 3px;*/
+    /*-moz-border-radius: 3px;*/
+    /* Firefox */
+        /*-webkit-border-radius: 3px;*/
+    /* Safari, Chrome */
+}
+
+.pink {
+  background-color: #ea5353;
+  color: #ffaea8;
+  border-color: #ffaea8;
+}
+.pink2 {
+  background-color: #ffaea8;
+  color: #ffaea8;
+  border-color: #ffaea8;
+}
+
+.logo {
+  position: relative;
+  margin-left: 280px;
+  padding-bottom: 20px;
+}
+
+.newfont {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 120px;
+        color: white;
+        text-align: center;
+        margin-top: 30px;
+}
+
+.newfont2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 40px;
+        color: white;
+        text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .newfont {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 70px;
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+ }
+ .newfont2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        color: white;
+        text-align: center;
+}
+}
+
+
+.newfont3 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 30px;
+        color: white;
+        background-color: transparent;
+        margin-top: 10px;
+        margin-right: 20px;
+}
+
+.newfont4 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 30px;
+        color: black;
+}
+
+.newfont5 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        color: black;
+}
+
+.newfont6 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        color: white;
+}
+
+.newfont7 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        color: black;
+}
+
+.split.button {
+  width: 100%; }
+  .split.button.facebook {
+    background: #3b5998;
+    text-transform: uppercase; }
+    .split.button.facebook span {
+      background: #2d4373; }
+      .split.button.facebook span:after {
+        border: none;
+        font-family: "foundation-icons";
+        content: "\f1c4";
+        font-size: 2rem;
+        line-height: 0.25rem;
+        margin-left: -0.7rem; }
+  .split.button.twitter {
+    background: #55acee;
+    text-transform: uppercase; }
+    .split.button.twitter span {
+      background: #2795e9; }
+      .split.button.twitter span:after {
+        border: none;
+        font-family: "foundation-icons";
+        content: "\f1e4";
+        font-size: 2rem;
+        line-height: 0.25rem;
+        margin-left: -0.7rem; }
+  .split.button.google {
+    background: #d50f25;
+    text-transform: uppercase; }
+    .split.button.google span {
+      background: #a50c1d; }
+      .split.button.google span:after {
+        border: none;
+        font-family: "foundation-icons";
+        content: "\f1ca";
+        font-size: 2rem;
+        line-height: 0.25rem;
+        margin-left: -0.7rem; }
+  .split.button.left-icon {
+    text-align: right; }
+    .split.button.left-icon span {
+      left: 0; }
+     
+.top-bar-section ul li {
+  background: transparent;
+}
+
+.top-bar {
+    background: #ea5353;
+    overflow: visible;
+  }
+
+@media only screen and (max-width: 40.063em) {
+  .none {
+    display: none;
+  }
+} 

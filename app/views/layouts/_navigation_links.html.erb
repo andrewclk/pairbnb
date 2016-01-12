@@ -1,0 +1,30 @@
+<%# add navigation links to this file %>
+        <% if session[:user_id] == nil %>
+        <li class= "pink none">
+         <!--    <a href="#login-box" class="login-window"><button class="tiny alert button" style='top: 0px'>
+              Login / Sign Up</button></a> -->
+              <a href="#login-box" class="login-window" style="background: #ea5353">
+              <h5 class="newfont6"  style="margin-top: 10px"> Sign Up </h5></a>
+           </li>
+         <li class= "pink none">  
+              <a href="#login-box" class="login-window pink" style="background: #ea5353">
+              <h5 class="newfont6" style="margin-top: 10px"> Login </h5></a>
+            </li>
+        <% end %>
+      
+        <li class="pink">
+           <% if current_user %>
+           <div class="newfont6 pink"  style="margin-top: 8px"> Welcome, <%= current_user.name %>! </div>
+           </li>
+             <li class= "pink">
+              <form method=get action="/signout">
+              <button class="button" style="margin-left: 20px"> Sign Out! </button><br>
+              </form>
+            </li>
+           <% elsif session[:user_id] != nil %> 
+           <% @user = User.find(session[:user_id]) %>
+           <div class="newfont6 pink"> Welcome, <%= @user.email %>! </div>
+            </li>
+    
+             <% end %>
+  
