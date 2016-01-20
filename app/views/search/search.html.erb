@@ -1,0 +1,23 @@
+<div class='column panel' >
+<h1>Listings Search</h1>
+
+<%= form_for search_path, method: :get do |f| %>
+  <p>
+    <%= f.label "Search for" %>
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
+
+<ul>
+  <% @listings.each do |list| %>
+ 
+    <li>
+      <h3>
+        <%= link_to list.name, controller: "listings", action: "show", id: list.id%>
+      </h3>
+    </li>
+  <% end %>
+</ul>
+</div>

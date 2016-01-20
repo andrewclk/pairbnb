@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title><%= content_for?(:title) ? yield(:title) : "Pairbnb" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Pairbnb" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%# Modernizr is required for Zurb Foundation %>
-    <%= javascript_include_tag 'vendor/modernizr' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= include_gon %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script src="/assets/javascripts/application.js"></script>
-    <script src="/assets/javascripts/foundation.js"></script>
-    <script src="/assets/javascripts/foundation.topbar.js"></script>
-
-     <script>
-    $(document).foundation();
-    </script>
 
     <%= csrf_meta_tags %>
       <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
       <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
 
+    <%= stylesheet_link_tag 'application', media: 'all', "data-turbolinks-track" => true %>
+
   </head>
-  <body class="airbnb adjust-top">
+
+  </head>
+  <body class="airbnb">
 
     <header>
-      <%= render 'layouts/navigation' %>
+          <ul>
+            <%= render 'layouts/navigation' %>
+          </ul>
+  
     </header>
     <main role="main">
        <%= render 'layouts/messages' %>
+       <p id="notice"><%= notice %></p>
        <%= yield %>
+
     </main>
+    <%= javascript_include_tag "vendor/jquery.min" %>
+    <%= javascript_include_tag "foundation.min" %>
+    <%= javascript_include_tag "foundation/foundation" %>
+    <%= javascript_include_tag "foundation/foundation.topbar" %>
+<script>
+$(document).on('ready page:load', function () {
+$(function(){ $(document).foundation(); });
+});
+// your custom codes
+</script>
   </body>
 </html>

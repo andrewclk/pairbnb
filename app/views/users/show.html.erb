@@ -1,0 +1,40 @@
+
+
+<div class="row">
+<div class="column large-6 panel white">
+<h3 class="newfont3">Create list here!</h3>
+
+<%= render partial: '/listings/form' %>
+</div>
+<div class="column large-6 panel white">
+<%= render partial: "reservations/show" %>
+</div>
+<div class="column large-6 panel white">
+<h3 class="newfont3">Your property</h3>
+<% @listings.each do |x| %>
+<% if x.user_id == @user.id %>
+<div class="column large-12 panel">
+<h3 class="newfont3"><%= x.name %>
+</h3>
+<div class="column large-12 white">
+<h3 class="newfont5 left"><%= x.address %>
+</h3>
+</div>
+<div class="column large-6 white">
+<h3 class="newfont4 left"><%= x.city %>
+</h3>
+</div>
+<div class="column large-6 white">
+<h3 class="newfont3 right"><%= x.price %>
+</h3>
+</div>
+<%= link_to 'New Reservation', new_listing_reservation_path(x) %>
+<%= link_to 'Edit', edit_listing_path(x) %>
+<%= link_to 'Delete', x, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
+<% end %>
+</div>
+
+
+</div>

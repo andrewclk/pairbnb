@@ -11,7 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111030307) do
+ActiveRecord::Schema.define(version: 20160119023348) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "listings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "name"
+    t.text     "address"
+    t.text     "city"
+    t.integer  "price"
+    t.text     "tag"
+    t.boolean  "booking_status"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "number"
+  end
+
+  add_index "listings", ["user_id"], name: "index_listings_on_user_id", using: :btree
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "listing_id"
+    t.integer  "number_of_guest"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "extra_request"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "reservations", ["listing_id"], name: "index_reservations_on_listing_id", using: :btree
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"
@@ -25,9 +57,10 @@ ActiveRecord::Schema.define(version: 20160111030307) do
     t.string   "encrypted_password", limit: 128
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128
+    t.string   "avatar"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email"
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

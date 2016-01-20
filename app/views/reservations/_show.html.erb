@@ -1,0 +1,23 @@
+<% if @last_reservation != nil %>
+<p>
+  <strong>Number of guest:</strong>
+  <%= @last_reservation.number_of_guest %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @last_reservation.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @last_reservation.end_date %>
+</p>
+
+<p>
+  <strong>Extra request:</strong>
+  <%= @last_reservation.extra_request %>
+</p>
+
+<%=link_to "Checkout", new_transaction_path, class: "button" %>
+<% end %>

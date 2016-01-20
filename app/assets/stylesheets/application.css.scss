@@ -12,7 +12,13 @@
  *
  *= require_tree .
  *= require_self
- */
+ //= require foundation_and_overrides
+
+ /
+ /= require foundation_and_overrides  */
+
+
+
  
  .airbnb {
       background-image: url(https://a2.muscache.com/airbnb/static/landing_pages/pretzel/stills/seoul-ae85e0e675294f40e8b35b00dac98f55.jpg);
@@ -218,17 +224,22 @@
     .split.button.left-icon span {
       left: 0; }
      
-.top-bar-section ul li {
-  background: transparent;
-}
 
 .top-bar {
     background: #ea5353;
-    overflow: visible;
+    overflow: none;
   }
 
-@media only screen and (max-width: 40.063em) {
-  .none {
-    display: none;
-  }
-} 
+.top-bar-section li:not(.has-form) a:not(.button):not(.submit):not(.button-xs) {
+    background: #ea5353;
+    line-height: 2.8125rem;
+    padding: 0 0.9375rem;
+    }
+@media only screen and (min-width: 40.0625em) {
+.contain-to-grid .top-bar {
+    background: #ea5353;
+}}
+
+.top-bar-section ul li {
+  background: #ea5353;
+}
