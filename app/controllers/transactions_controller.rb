@@ -11,7 +11,6 @@ class TransactionsController < ApplicationController
   	@current_reservation = current_user.reservations.last
   	@listing = Listing.find(@current_reservation.listing_id)
   	@listing_price = @listing.price
-  	byebug
     @result = Braintree::Transaction.sale(
               amount: @listing_price,
               payment_method_nonce: params[:payment_method_nonce])

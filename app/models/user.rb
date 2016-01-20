@@ -1,4 +1,4 @@
-require 'byebug'
+
 require 'carrierwave/orm/activerecord'
 
 class User < ActiveRecord::Base

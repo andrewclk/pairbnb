@@ -38,7 +38,6 @@ class ReservationsController < ApplicationController
     end
     respond_to do |format|
       if @reservation.save
-        byebug
         format.html { redirect_to @user, notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @user }
        
